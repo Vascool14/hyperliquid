@@ -12,9 +12,11 @@ Embeddable Hyperliquid candlestick charts with 2 optional current-state price pr
 - Blue is take profit, magenta is stop loss, and buy orders are a darker shade of each. 
 - Bar length is order count by default, so whole-position orders with no reported size are still counted.
 
-also, executed liquidations are a separate, optional marker layer on the candles.
+## The library:
 
-The library wraps [Lightweight Charts](https://www.tradingview.com/lightweight-charts/) behind a small framework-agnostic API (`createChart`).
+- wraps [Lightweight Charts](https://www.tradingview.com/lightweight-charts/) behind a small framework-agnostic API (`createChart`)
+- uses Hydromancer's[https://hydromancer.xyz/] WebSocket & REST APIs for a better, faster data provider.
+
 
 ## Showcase
 
