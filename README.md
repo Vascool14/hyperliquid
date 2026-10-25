@@ -33,7 +33,7 @@ Two markets sharing one client, with independent chart settings.
 ## Quick start
 
 ```bash
-cp .env.example  .env        # then set HYDROMANCER_API_KEY
+cp .env.example  .env        # then set your HYDROMANCER_API_KEY in the new .env file
 npm i
 npm run dev
 ```
