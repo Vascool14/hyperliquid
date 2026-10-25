@@ -1,0 +1,17 @@
+{
+    "name": "@hydromancer-charts/gateway",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "node --env-file-if-exists=../.env --watch src/server.ts",
+        "start": "node --env-file-if-exists=../.env src/server.ts",
+        "typecheck": "tsc --noEmit -p tsconfig.json"
+    },
+    "dependencies": {
+        "ws": "8.22.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.0",
+        "@types/ws": "8.18.2"
+    }
+}

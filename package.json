@@ -1,0 +1,31 @@
+{
+    "name": "hydromancer-charts",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=24.4.0"
+    },
+    "workspaces": [
+        "chart",
+        "gateway",
+        "react-demo"
+    ],
+    "scripts": {
+        "dev": "concurrently -k -n gateway,demo \"npm run dev -w gateway\" \"npm run dev -w react-demo -- --host\"",
+        "build": "npm run build -w chart && npm run build -w react-demo",
+        "typecheck": "npm run typecheck --workspaces --if-present",
+        "test": "vitest run",
+        "start": "npm run start -w gateway",
+        "bench": "vitest run --config vitest.bench.config.ts",
+        "format": "prettier --write \"chart/{src,test,bench}/**/*.ts\" \"gateway/{src,test}/**/*.ts\" \"react-demo/src/**/*.{ts,tsx,css}\" \"*.ts\"",
+        "format:check": "prettier --check \"chart/{src,test,bench}/**/*.ts\" \"gateway/{src,test}/**/*.ts\" \"react-demo/src/**/*.{ts,tsx,css}\" \"*.ts\""
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.0",
+        "concurrently": "10.0.6",
+        "prettier": "^3.9.10",
+        "typescript": "6.0.3",
+        "vite": "8.3.5",
+        "vitest": "5.0.5"
+    }
+}

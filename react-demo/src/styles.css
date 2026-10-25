@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+:root,
+:root[data-theme="dark"] {
+    --bg: #0e1014;
+    --surface: #14171c;
+    --line: #262b33;
+    --text: #d5dae1;
+    --muted: #8a939f;
+    --accent: #e6e9ee;
+}
+
+:root[data-theme="light"] {
+    --bg: #ffffff;
+    --surface: #f7f8fa;
+    --line: #dfe3e8;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --accent: #111827;
+}
+
+@theme inline {
+    --color-bg: var(--bg);
+    --color-surface: var(--surface);
+    --color-line: var(--line);
+    --color-text: var(--text);
+    --color-muted: var(--muted);
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font:
+        12px/1.4 ui-sans-serif,
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+}
+
+input[type="checkbox"],
+input[type="range"] {
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 120px;
+}
+
+.btn,
+.field {
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-color: var(--muted);
+}
+
+.btn[data-off] {
+    color: var(--muted);
+}
+
+.divider {
+    align-self: stretch;
+    width: 1px;
+    margin: 2px 4px;
+    background: var(--line);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-caret {
+    margin-left: 6px;
+    color: var(--muted);
+}
+
+.dropdown-card {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    white-space: nowrap;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);
+}
+
+.dropdown-card > :first-child {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+}
+
+.dropdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.dropdown-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.segmented {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+}
+
+.segmented button {
+    font: inherit;
+    color: var(--muted);
+    background: transparent;
+    border: 0;
+    border-left: 1px solid var(--line);
+    padding: 2px 8px 3px;
+    cursor: pointer;
+}
+
+.segmented button:first-child {
+    border-left: 0;
+}
+
+.segmented button[aria-pressed="true"] {
+    color: var(--text);
+    background: var(--surface);
+    box-shadow: inset 0 -1px 0 var(--accent);
+}
+
+:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 1px;
+}
