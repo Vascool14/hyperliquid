@@ -15,7 +15,7 @@ Embeddable Hyperliquid candlestick charts with 2 optional current-state price pr
 ## The library:
 
 - wraps [Lightweight Charts](https://www.tradingview.com/lightweight-charts/) behind a small framework-agnostic API (`createChart`)
-- uses Hydromancer's[https://hydromancer.xyz/] WebSocket & REST APIs for a better, faster data provider.
+- uses [Hydromancer](https://hydromancer.xyz/)'s WebSocket & REST APIs for a better, faster data provider.
 
 
 ## Showcase
