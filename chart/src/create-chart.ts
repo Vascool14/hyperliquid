@@ -124,8 +124,8 @@ export function mergeOptions<T>(...sources: unknown[]): T {
                 isPlainObject(value) && isPlainObject(out[key])
                     ? mergeOptions(out[key], value)
                     : isPlainObject(value)
-                      ? mergeOptions(value)
-                      : value;
+                        ? mergeOptions(value)
+                        : value;
         }
     }
     return out as T;
